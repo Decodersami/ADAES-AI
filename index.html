@@ -1,56 +1,48 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>Exam Time</title>
-    <script>
-        function showAlert() {
-            alert("Response noted! Submit another Response!");
-        }
-        function nextPage(){
-            alert("Go to next Page.");
-        }
-    </script>
-</head>
-<body class="text-center">
-<form class="form-signin" action="{{ url_for("foo") }}" method="post">
-    <div class="container">
+{% extends "layout.html" %}
+{% block title %}Answer Evaluation{% endblock %}
+{% block body %}
 
-        <br>
-        <h6 class="h3 mb-3 font-weight-normal">Automated Descriptive Answer Evaluation System (ADAES) </h6>
-        <br>
+<style>
+    div.container h1{
+        font-size: 55px;
+        color: #6495ED;
+        padding-block-start: 215px;
+        font-weight: 600;
+        padding-block-end: 145px;
+        padding-inline-end: 30px;
+    }
+    div.container p{
+        font-size: 18px;
+        color: black;
+        padding-block-start: 150px;
+        font-weight: 400;
+        padding-block-end: 100px;
+        padding-inline-end: 30px;
+    }
+</style>
 
-        <br>
-        <input type="text" placeholder="Student Name" name="name">
-        <input type="text" placeholder="Roll No" name="roll">
-         <input type="text" placeholder="Program Name" name="program">
-        <input type="text" placeholder="Subject Name" name="subject">
-       
-        
-        <br>
-        <input type="email" placeholder="Email ID*" name="emailID">
-        <br>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-primary" onclick="showAlert()">
-        <br>
-
+<div class="container">
+    <div class = "row">
+    <div class="col">
+        <center>
+        <h1>Answer Evaluation</h1>
+        </center>
     </div>
-
-
-        <br>
-        <h3 class="h3 mb-3 font-weight-normal">Q 1.What is Object Oriented Programming(OOP)? 
-            What are the main principles of OOP? (Marks 10)</h3>
-        <br>
-        <textarea name="first" rows="15" cols="100" title="Answer"></textarea><!--name=id -->
-        <br>
-        <br>
-        <input type="submit" value="Submit Answer" class="btn btn-primary" onclick="showAlert()">
-        <br>
-        <br>
-        <input type="next" value="Next" class="btn btn-primary" onclick="nextPage()">
-        <br>
+    <div class="col">
+        <center>
+        <p>
+            Hello Learners!!<br>In the dynamic landscape of the traditional education system,
+            we present ADAES, a cutting-edge Descriptive Answer Evaluation System 
+            powered by state-of-the-art Natural Language Processing (NLP) and Machine Learning techniques.
+            Tailored for universities, schools, and colleges, our innovative system transcends traditional evaluation methods,
+            offering an automated and nuanced approach to evaluating descriptive answers.
+            Join us at the forefront of educational technology, where precision meets automation,
+            and discover a transformative tool designed to elevate the evaluation experience for both educators and learners.
+            
+        </p>
+        </center>
     </div>
-</form>
-</body>
-</html>
+    </div>
+</div>
+
+{% endblock %}
